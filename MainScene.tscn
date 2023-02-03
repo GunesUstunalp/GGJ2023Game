@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprite.tscn" type="PackedScene" id=1]
-[ext_resource path="res://toppng.com-tree-silhouette-1024x859.png" type="Texture" id=2]
+[ext_resource path="res://Resources/toppng.com-tree-silhouette-1024x859.png" type="Texture" id=2]
 [ext_resource path="res://RootEnd.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
