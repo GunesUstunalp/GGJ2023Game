@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://A_black_image.jpg" type="Texture" id=1]
+
+[node name="ARoot" type="Sprite"]
+scale = Vector2( 0.005, 0.007 )
+texture = ExtResource( 1 )
