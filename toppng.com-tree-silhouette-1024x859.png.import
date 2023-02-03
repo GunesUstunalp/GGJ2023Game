@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/toppng.com-tree-silhouette-1024x859.png-96aa4f17d6b9b12ccd9c473427f4b8c0.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://toppng.com-tree-silhouette-1024x859.png"
+dest_files=[ "res://.import/toppng.com-tree-silhouette-1024x859.png-96aa4f17d6b9b12ccd9c473427f4b8c0.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
