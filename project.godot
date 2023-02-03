@@ -14,6 +14,10 @@ config/name="GGJ2023Game"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+BackgroundMusic="*res://BackgroundMusic.tscn"
+
 [display]
 
 window/size/height=812
