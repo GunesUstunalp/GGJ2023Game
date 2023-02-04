@@ -10,6 +10,7 @@ var groundMatrix #0-> free, 1-> root, 2-> rock
 var lastCreatedPosition = Vector2.ZERO 
 
 func _ready():
+	position = Vector2(512, 380)
 	rootScene = preload("res://ARoot.tscn")
 	
 	groundMatrix=[]
