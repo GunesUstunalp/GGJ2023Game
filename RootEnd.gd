@@ -46,7 +46,7 @@ func _process(delta):
 	if x_to_check >= 1024 or y_to_check >= 512:
 		print("X= ",position.x, " Y= ", position.y, " VelX= ", velocity.x, " VelY= ", velocity.y)
 	
-	if x_to_check < 1024 and y_to_check < 512 and groundMatrix[x_to_check][y_to_check] == 0:
+	if x_to_check < 1023 and y_to_check < 511 and groundMatrix[x_to_check][y_to_check] == 0:
 		speed = slowSpeed
 	else:
 		speed = fastSpeed
@@ -62,7 +62,7 @@ func _process(delta):
 		var newPosition = position + velocity * delta
 		
 		print(newPosition.x, " ", newPosition.y - 300)
-		if(newPosition.x < 0 or newPosition.x > 1024 or newPosition.y - 300 > 512):
+		if(newPosition.x < 1 or newPosition.x > 1023 or newPosition.y - 300 > 511):
 			position = rootOriginPoint
 		else:
 			position = newPosition
@@ -84,7 +84,8 @@ func create_roots_on_path():
 	
 	for x in range(rootHalfWidth * 2):
 		for y in range(rootHalfWidth * 2):
-			groundMatrix[rootCenterX + x][rootCenterY + y] = 1
+			if rootCenterX + x > 0 and rootCenterX + x < 1024 and rootCenterY + y < 512:
+				groundMatrix[rootCenterX + x][rootCenterY + y] = 1
 	raise()
 	
 func create_dummy_root_on_path():
