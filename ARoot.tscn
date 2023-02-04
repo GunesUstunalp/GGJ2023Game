@@ -1,7 +1,9 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Resources/A_black_image.jpg" type="Texture" id=1]
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/A_black_image.jpg-4d9dcadbc0ece0edd10334b934e7fc52.stex"
 
 [node name="ARoot" type="Sprite"]
 scale = Vector2( 0.005, 0.007 )
-texture = ExtResource( 1 )
+texture = SubResource( 1 )

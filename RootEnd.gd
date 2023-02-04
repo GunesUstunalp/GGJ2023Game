@@ -14,7 +14,6 @@ var lastCreatedPosition = Vector2.ZERO
 
 func _ready():
 	position = rootOriginPoint
-	rootScene = preload("res://ARoot.tscn")
 	generatedRootImage = preload('res://Resources/rootcolor.jpg')
 	
 	var th = rootHalfWidth * 2
@@ -95,5 +94,3 @@ func create_dummy_root_on_path():
 	generatedRootInstance.position = position
 	get_parent().add_child(generatedRootInstance)
 	raise()
-	
-
