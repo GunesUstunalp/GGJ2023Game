@@ -11,7 +11,7 @@ var rng = RandomNumberGenerator.new()
 signal rock_spawned
 
 func _ready():
-	rockImage = preload('res://Resources/stone2.png')
+	rockImage = preload('res://Resources/stoneanimation2/0.png')
 	var th = rockHalfWidth * 2
 	var tw = rockHalfWidth * 2
 	var imageSize = rockImage.get_size()

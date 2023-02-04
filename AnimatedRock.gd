@@ -1,5 +1,5 @@
 extends AnimatedSprite
 
 func _on_AnimatedSprite_animation_finished():
-	frame = 6
+	frame = 9
 	playing = false
