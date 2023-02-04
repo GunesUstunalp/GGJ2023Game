@@ -3,6 +3,7 @@ extends Area2D
 var rootHalfWidth = 5
 var slowSpeed = 25
 var fastSpeed = 200
+var rootOriginPoint = Vector2(512, 300)
 var speed = slowSpeed
 var rootScene
 var groundMatrix #0-> free, 1-> root, 2-> rock
@@ -12,7 +13,7 @@ var rootImageScale
 var lastCreatedPosition = Vector2.ZERO 
 
 func _ready():
-	position = Vector2(512, 380)
+	position = rootOriginPoint
 	rootScene = preload("res://ARoot.tscn")
 	generatedRootImage = preload('res://Resources/A_black_image.jpg')
 	
@@ -38,10 +39,10 @@ func _process(delta):
 		velocity.y += 1
 		
 	if Input.is_action_pressed("respawn"):
-		position = Vector2(512, 380)
+		position = rootOriginPoint
 
 	var x_to_check = position.x + (velocity.x * 5)
-	var y_to_check = position.y - 512 + (velocity.y * 5)
+	var y_to_check = position.y - 300 + (velocity.y * 5)
 	if x_to_check >= 1024 or y_to_check >= 512:
 		print("X= ",position.x, " Y= ", position.y, " VelX= ", velocity.x, " VelY= ", velocity.y)
 	
@@ -51,13 +52,21 @@ func _process(delta):
 		speed = fastSpeed
 	
 	if velocity != Vector2.ZERO:
-		if groundMatrix[int(position.x)][int(position.y - 512)] == 0:
+		if groundMatrix[int(position.x)][int(position.y - 300)] == 0:
 			create_roots_on_path()
 		else:
 			create_dummy_root_on_path()
 			
 		velocity = velocity.normalized() * speed
-		position += velocity * delta
+		
+		var newPosition = position + velocity * delta
+		
+		print(newPosition.x, " ", newPosition.y - 300)
+		if(newPosition.x < 0 or newPosition.x > 1024 or newPosition.y - 300 > 512):
+			position = rootOriginPoint
+		else:
+			position = newPosition
+		
 		
 	#print("Speed ", speed, " -- ", lastCreatedPosition.distance_to(position))
 
@@ -71,7 +80,7 @@ func create_roots_on_path():
 	get_parent().add_child(generatedRootInstance)
 	
 	var rootCenterX = int(position.x) - rootHalfWidth
-	var rootCenterY = int(position.y - 512) - rootHalfWidth
+	var rootCenterY = int(position.y - 300) - rootHalfWidth
 	
 	for x in range(rootHalfWidth * 2):
 		for y in range(rootHalfWidth * 2):
