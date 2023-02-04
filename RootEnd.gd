@@ -6,12 +6,21 @@ var fastSpeed = 200
 var speed = slowSpeed
 var rootScene
 var groundMatrix #0-> free, 1-> root, 2-> rock
+var generatedRootImage
+var rootImageScale
 
 var lastCreatedPosition = Vector2.ZERO 
 
 func _ready():
 	position = Vector2(512, 380)
 	rootScene = preload("res://ARoot.tscn")
+	generatedRootImage = preload('res://Resources/A_black_image.jpg')
+	
+	var th = rootHalfWidth * 2
+	var tw = rootHalfWidth * 2
+	var imageSize = generatedRootImage.get_size()
+	rootImageScale = Vector2(tw/imageSize.x, th/imageSize.y)
+	print(rootImageScale)
 	
 	groundMatrix=[]
 	for x in range(1024):
@@ -37,23 +46,25 @@ func _process(delta):
 	else:
 		speed = fastSpeed
 	
-	
-	
 	if velocity != Vector2.ZERO:
 		if groundMatrix[int(position.x)][int(position.y - 512)] == 0:
 			create_roots_on_path()
+		else:
+			create_dummy_root_on_path()
 			
 		velocity = velocity.normalized() * speed
 		position += velocity * delta
 		
-	print("Speed ", speed, " -- ", lastCreatedPosition.distance_to(position))
+	#print("Speed ", speed, " -- ", lastCreatedPosition.distance_to(position))
 
 func create_roots_on_path():
 	lastCreatedPosition = position
 	
-	var rootInstance = rootScene.instance()
-	rootInstance.position = position
-	get_parent().add_child(rootInstance)
+	var generatedRootInstance = Sprite.new()
+	generatedRootInstance.texture = generatedRootImage
+	generatedRootInstance.scale = rootImageScale
+	generatedRootInstance.position = position
+	get_parent().add_child(generatedRootInstance)
 	
 	var rootCenterX = int(position.x) - rootHalfWidth
 	var rootCenterY = int(position.y - 512) - rootHalfWidth
@@ -61,17 +72,14 @@ func create_roots_on_path():
 	for x in range(rootHalfWidth * 2):
 		for y in range(rootHalfWidth * 2):
 			groundMatrix[rootCenterX + x][rootCenterY + y] = 1
-	
-	#print("Speed = ",speed)
-	
-	
-#	var shape = RectangleShape2D.new()
-#	shape.set_extents(Vector2(5,5))
-#	var collision = CollisionShape2D.new()
-#	collision.set_shape(shape)
-#	collision.position = position
-#
-#	get_parent().find_node("Roots").add_child(collision)
-
 	raise()
+	
+func create_dummy_root_on_path():
+	var generatedRootInstance = Sprite.new()
+	generatedRootInstance.texture = generatedRootImage
+	generatedRootInstance.scale = rootImageScale
+	generatedRootInstance.position = position
+	get_parent().add_child(generatedRootInstance)
+	raise()
+	
 
