@@ -1,9 +1,3 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=2]
 
-[sub_resource type="TileSet" id=1]
-
-[node name="TileMap" type="TileMap"]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 4, 4 )
-centered_textures = true
-format = 1
+[node name="Roots" type="Area2D"]
