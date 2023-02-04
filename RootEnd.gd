@@ -39,9 +39,13 @@ func _process(delta):
 		
 	if Input.is_action_pressed("respawn"):
 		position = Vector2(512, 380)
+
+	var x_to_check = position.x + (velocity.x * 5)
+	var y_to_check = position.y - 512 + (velocity.y * 5)
+	if x_to_check >= 1024 or y_to_check >= 512:
+		print("X= ",position.x, " Y= ", position.y, " VelX= ", velocity.x, " VelY= ", velocity.y)
 	
-	#if lastCreatedPosition.x - 1 < position.x and lastCreatedPosition.x + 1 > position.x and lastCreatedPosition.y - 1 < position.y and lastCreatedPosition.y + 1 > position.y:
-	if lastCreatedPosition.distance_to(position) < 5:
+	if x_to_check < 1024 and y_to_check < 512 and groundMatrix[x_to_check][y_to_check] == 0:
 		speed = slowSpeed
 	else:
 		speed = fastSpeed
