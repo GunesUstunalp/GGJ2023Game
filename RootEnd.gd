@@ -9,6 +9,7 @@ var rootScene
 var groundMatrix #0-> free, 1-> root, 2-> rock
 var generatedRootImage
 var rootImageScale
+var foundRockIndexes = []
 
 var lastCreatedPosition = Vector2.ZERO 
 
@@ -40,6 +41,8 @@ func _process(delta):
 		velocity.x -= 1
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
+	if Input.is_action_pressed("move_up"):
+		velocity.y -= 1
 		
 	if Input.is_action_pressed("respawn"):
 		respawn()
@@ -51,8 +54,13 @@ func _process(delta):
 	if x_to_check < 1023 and y_to_check < 511 and groundMatrix[x_to_check][y_to_check] == 0:
 		speed = slowSpeed
 	elif x_to_check < 1023 and y_to_check < 511 and groundMatrix[x_to_check][y_to_check] != 1:
-		respawn()
-		emit_signal("found_rock", position, groundMatrix[x_to_check][y_to_check] - 2) #position and rockIndex
+		var foundRockIndex = groundMatrix[x_to_check][y_to_check] - 2
+		if foundRockIndexes.find(foundRockIndex) == -1:
+			respawn()
+			emit_signal("found_rock", position, foundRockIndex) #position and rockIndex
+			foundRockIndexes.append(foundRockIndex)
+		else:
+			return
 	else:
 		speed = fastSpeed
 	
@@ -110,3 +118,17 @@ func _on_rock_spawned(posToSpawn, rockHalfWidth, currRockIndex):
 			groundMatrix[posToSpawn.x + x][posToSpawn.y - 300 + y] = currRockIndex + 2
 			#print(posToSpawn.x + x, "  ", posToSpawn.y - 300 + y)
 	print("Rock spawned")
+	
+func is_there_space_for_a_rock_there(pos, rockHalfWidth):
+	print("Is there space for a rock?")
+	print("Space: ", pos)
+	pos.x -= rockHalfWidth
+	pos.y -= rockHalfWidth
+	
+	
+	for x in range(rockHalfWidth * 2):
+		for y in range(rockHalfWidth * 2):
+			if groundMatrix[pos.x + x][pos.y - 300 + y] != 0:
+				return false
+	
+	return true
