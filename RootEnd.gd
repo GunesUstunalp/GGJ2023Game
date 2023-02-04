@@ -116,3 +116,17 @@ func _on_rock_spawned(posToSpawn, rockHalfWidth, currRockIndex):
 			groundMatrix[posToSpawn.x + x][posToSpawn.y - 300 + y] = currRockIndex + 2
 			#print(posToSpawn.x + x, "  ", posToSpawn.y - 300 + y)
 	print("Rock spawned")
+	
+func is_there_space_for_a_rock_there(pos, rockHalfWidth):
+	print("Is there space for a rock?")
+	print("Space: ", pos)
+	pos.x -= rockHalfWidth
+	pos.y -= rockHalfWidth
+	
+	
+	for x in range(rockHalfWidth * 2):
+		for y in range(rockHalfWidth * 2):
+			if groundMatrix[pos.x + x][pos.y - 300 + y] != 0:
+				return false
+	
+	return true
