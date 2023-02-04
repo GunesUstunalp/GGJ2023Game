@@ -15,7 +15,7 @@ var lastCreatedPosition = Vector2.ZERO
 func _ready():
 	position = rootOriginPoint
 	rootScene = preload("res://ARoot.tscn")
-	generatedRootImage = preload('res://Resources/A_black_image.jpg')
+	generatedRootImage = preload('res://Resources/rootcolor.jpg')
 	
 	var th = rootHalfWidth * 2
 	var tw = rootHalfWidth * 2
