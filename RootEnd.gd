@@ -1,8 +1,8 @@
 extends Area2D
 
 var rootHalfWidth = 5
-var slowSpeed = 25
-var fastSpeed = 200
+var slowSpeed = 35
+var fastSpeed = 150
 var rootOriginPoint = Vector2(512, 300)
 var speed = slowSpeed
 var rootScene
