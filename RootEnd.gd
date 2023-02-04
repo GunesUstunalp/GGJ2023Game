@@ -1,7 +1,7 @@
 extends Area2D
 
 var rootHalfWidth = 5
-var slowSpeed = 35
+var slowSpeed = 50
 var fastSpeed = 150
 var rootOriginPoint = Vector2(512, 300)
 var speed = slowSpeed
@@ -120,8 +120,8 @@ func _on_rock_spawned(posToSpawn, rockHalfWidth, currRockIndex):
 	print("Rock spawned")
 	
 func is_there_space_for_a_rock_there(pos, rockHalfWidth):
-	print("Is there space for a rock?")
-	print("Space: ", pos)
+	#print("Is there space for a rock?")
+	#print("Space: ", pos)
 	pos.x -= rockHalfWidth
 	pos.y -= rockHalfWidth
 	
