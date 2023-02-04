@@ -35,3 +35,5 @@ func _on_found_rock(rootEndPos, foundIndex):
 #	var connectionLine = Line2D.new()
 #	connectionLine.draw_line(Vector2(400,400), Vector2(512,512), Color.aqua, 10)
 #	add_child_below_node(get_node("Rocks"), connectionLine)
+
+	

@@ -9,6 +9,7 @@ var rootScene
 var groundMatrix #0-> free, 1-> root, 2-> rock
 var generatedRootImage
 var rootImageScale
+var foundRockIndexes = []
 
 var lastCreatedPosition = Vector2.ZERO 
 
@@ -51,8 +52,13 @@ func _process(delta):
 	if x_to_check < 1023 and y_to_check < 511 and groundMatrix[x_to_check][y_to_check] == 0:
 		speed = slowSpeed
 	elif x_to_check < 1023 and y_to_check < 511 and groundMatrix[x_to_check][y_to_check] != 1:
-		respawn()
-		emit_signal("found_rock", position, groundMatrix[x_to_check][y_to_check] - 2) #position and rockIndex
+		var foundRockIndex = groundMatrix[x_to_check][y_to_check] - 2
+		if foundRockIndexes.find(foundRockIndex) == -1:
+			respawn()
+			emit_signal("found_rock", position, foundRockIndex) #position and rockIndex
+			foundRockIndexes.append(foundRockIndex)
+		else:
+			return
 	else:
 		speed = fastSpeed
 	
