@@ -120,8 +120,8 @@ func _on_rock_spawned(posToSpawn, rockHalfWidth, currRockIndex):
 	print("Rock spawned")
 	
 func is_there_space_for_a_rock_there(pos, rockHalfWidth):
-	print("Is there space for a rock?")
-	print("Space: ", pos)
+	#print("Is there space for a rock?")
+	#print("Space: ", pos)
 	pos.x -= rockHalfWidth
 	pos.y -= rockHalfWidth
 	

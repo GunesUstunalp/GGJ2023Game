@@ -48,20 +48,23 @@ func _on_found_rock(rootEndPos, foundIndex):
 	get_node("AnimatedRocks").add_child(animatedRockInstance)
 	
 	if foundIndex == 0: #spawn an extra rock if it's the first time we found a rock
-		spawnRockAtRandomPosition() 
+		spawnRockAtRandomPosition(0) 
 	
-	spawnRockAtRandomPosition()
+	spawnRockAtRandomPosition(0)
 	
 #	var connectionLine = Line2D.new()
 #	connectionLine.draw_line(Vector2(400,400), Vector2(512,512), Color.aqua, 10)
 #	add_child_below_node(get_node("Rocks"), connectionLine)
 
-func spawnRockAtRandomPosition():
-	print("Spawn Rock at Random Pos")
+func spawnRockAtRandomPosition(tryNumber):
+	#print("Spawn Rock at Random Pos")
 	var randX = rng.randf_range(0 + rockHalfWidth, 1024 - rockHalfWidth)
 	var randY = rng.randf_range(300 + rockHalfWidth, 812 - rockHalfWidth)
+	if tryNumber > 50:
+		print("Possibly no more space")
+		return
 	
 	if get_node("RootEnd").call("is_there_space_for_a_rock_there", Vector2(randX, randY), rockHalfWidth):
 		spawnRockAtPosition(Vector2(randX, randY))
 	else:
-		spawnRockAtRandomPosition()
+		spawnRockAtRandomPosition(tryNumber + 1)
