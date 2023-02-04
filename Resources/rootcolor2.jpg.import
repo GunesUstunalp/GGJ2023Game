@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/toppng.com-tree-silhouette-1024x859.png-c0f122a5057f032a4c464c766d64350c.stex"
+path="res://.import/rootcolor2.jpg-edb319e50fd34a53de1a350d5020ff2e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/toppng.com-tree-silhouette-1024x859.png"
-dest_files=[ "res://.import/toppng.com-tree-silhouette-1024x859.png-c0f122a5057f032a4c464c766d64350c.stex" ]
+source_file="res://Resources/rootcolor2.jpg"
+dest_files=[ "res://.import/rootcolor2.jpg-edb319e50fd34a53de1a350d5020ff2e.stex" ]
 
 [params]
 

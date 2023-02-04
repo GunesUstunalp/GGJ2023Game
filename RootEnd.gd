@@ -1,8 +1,8 @@
 extends Area2D
 
 var rootHalfWidth = 5
-var slowSpeed = 25
-var fastSpeed = 200
+var slowSpeed = 35
+var fastSpeed = 150
 var rootOriginPoint = Vector2(512, 300)
 var speed = slowSpeed
 var rootScene
@@ -14,7 +14,6 @@ var lastCreatedPosition = Vector2.ZERO
 
 func _ready():
 	position = rootOriginPoint
-	rootScene = preload("res://ARoot.tscn")
 	generatedRootImage = preload('res://Resources/rootcolor.jpg')
 	
 	var th = rootHalfWidth * 2
@@ -95,5 +94,3 @@ func create_dummy_root_on_path():
 	generatedRootInstance.position = position
 	get_parent().add_child(generatedRootInstance)
 	raise()
-	
-
