@@ -19,7 +19,7 @@ func _process(delta):
 		velocity.y -= 0.2
 		
 	if Input.is_action_pressed("respawn"):
-		position = Vector2(512, 300)
+		position = Vector2(512, 380)
 	
 	velocity = velocity * speed
 	position += velocity * delta
