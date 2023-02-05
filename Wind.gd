@@ -24,6 +24,7 @@ func _ready():
 	
 	var rootEnd = get_parent().get_node("RootEnd")
 	rootEnd.connect("found_rock", self, "found_rock")
+	get_node("WindSound").volume_db = -15
 	
 func _process(delta):
 	strength += delta * STRENGTH_UP_RATE
@@ -55,6 +56,9 @@ func updateWindBasedOnStrength():
 	if int(strength) != lastSignaledStrength:
 		emit_signal("strength_passed_threshold", int(strength))
 		lastSignaledStrength = int(strength)
+		get_node("WindSound").volume_db = -20 + 5*int(strength)
+		print(get_node("WindSound").volume_db)
+		get_node("WindSound").playing = true
 	
 	
 func found_rock(rockPosition, foundRockIndex):
