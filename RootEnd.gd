@@ -3,13 +3,15 @@ extends Area2D
 var rootHalfWidth = 5
 var slowSpeed = 50
 var fastSpeed = 150
-var rootOriginPoint = Vector2(512, 300)
+
 var speed = slowSpeed
 var rootScene
 var groundMatrix #0-> free, 1-> root, 2-> rock
 var generatedRootImage
 var rootImageScale
 var foundRockIndexes = []
+var topOffset = 70
+var rootOriginPoint = Vector2(512, 300 + topOffset)
 
 var lastCreatedPosition = Vector2.ZERO 
 
@@ -75,7 +77,7 @@ func _process(delta):
 		var newPosition = position + velocity * delta
 		
 		#print(newPosition.x, " ", newPosition.y - 300)
-		if(newPosition.x < 1 or newPosition.x > 1023 or newPosition.y - 300 > 511 or newPosition.y - 300 < 0):
+		if(newPosition.x < 1 or newPosition.x > 1023 or newPosition.y - 300 > 511 or newPosition.y - 300 < topOffset):
 			respawn()
 		else:
 			position = newPosition
@@ -87,6 +89,7 @@ func create_roots_on_path():
 	generatedRootInstance.texture = generatedRootImage
 	generatedRootInstance.scale = rootImageScale
 	generatedRootInstance.position = position
+	generatedRootInstance.show_behind_parent = true
 	get_parent().find_node("Roots").add_child(generatedRootInstance)
 	
 	var rootCenterX = int(position.x) - rootHalfWidth
@@ -94,7 +97,7 @@ func create_roots_on_path():
 	
 	for x in range(rootHalfWidth * 2):
 		for y in range(rootHalfWidth * 2):
-			if rootCenterX + x > 0 and rootCenterX + x < 1024 and rootCenterY + y < 512 and rootCenterY + y > 0:
+			if rootCenterX + x > 0 and rootCenterX + x < 1024 and rootCenterY + y < 512 and rootCenterY + y > topOffset:
 				groundMatrix[rootCenterX + x][rootCenterY + y] = 1
 	raise()
 	
@@ -103,7 +106,8 @@ func create_dummy_root_on_path():
 	generatedRootInstance.texture = generatedRootImage
 	generatedRootInstance.scale = rootImageScale
 	generatedRootInstance.position = position
-	get_parent().add_child(generatedRootInstance)
+	generatedRootInstance.show_behind_parent = true
+	get_parent().find_node("Roots").add_child(generatedRootInstance)
 	raise()
 
 func respawn():
