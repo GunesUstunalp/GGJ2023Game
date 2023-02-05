@@ -14,6 +14,7 @@ func fall_tree():
 func _on_AnimatedTree_animation_finished():
 	if animation == "BendBroken":
 		playing = false
+		frame = 6
 
 func update_tree_based_on_wind(windStrength):
 	print("WindStrengthThreshold ", windStrength)
