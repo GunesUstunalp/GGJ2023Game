@@ -9,6 +9,7 @@ var rockPositionsArr = []
 var rockScalesArr = []
 var rockRotationsArr = []
 var rng = RandomNumberGenerator.new()
+var topOffset = 70
 
 signal rock_spawned
 
@@ -18,7 +19,7 @@ func _ready():
 	var rootEnd = get_node("RootEnd")
 	rootEnd.connect("found_rock", self, "_on_found_rock")
 	
-	spawnRockAtPosition(Vector2(480,430), DefaultRockHalfWidth, 0)
+	spawnRockAtPosition(Vector2(450,410 + topOffset), DefaultRockHalfWidth, 0)
 	
 	animatedRock = preload('res://AnimatedRock.tscn')
 	rng.randomize()
@@ -63,7 +64,7 @@ func spawnRockAtRandomPosition(tryNumber):
 	#print("Spawn Rock at Random Pos")
 	var randHalfWidth = rng.randf_range(DefaultRockHalfWidth/2, DefaultRockHalfWidth)
 	var randX = rng.randf_range(0 + randHalfWidth, 1024 - randHalfWidth)
-	var randY = rng.randf_range(300 + randHalfWidth, 812 - randHalfWidth)
+	var randY = rng.randf_range(300 + topOffset + randHalfWidth, 812 - randHalfWidth)
 	var randRotation = rng.randf_range(0,360)
 	
 	if tryNumber > 50:
