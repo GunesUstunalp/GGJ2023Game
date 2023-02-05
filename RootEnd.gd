@@ -75,7 +75,7 @@ func _process(delta):
 		var newPosition = position + velocity * delta
 		
 		#print(newPosition.x, " ", newPosition.y - 300)
-		if(newPosition.x < 1 or newPosition.x > 1023 or newPosition.y - 300 > 511):
+		if(newPosition.x < 1 or newPosition.x > 1023 or newPosition.y - 300 > 511 or newPosition.y - 300 < 0):
 			respawn()
 		else:
 			position = newPosition
@@ -94,7 +94,7 @@ func create_roots_on_path():
 	
 	for x in range(rootHalfWidth * 2):
 		for y in range(rootHalfWidth * 2):
-			if rootCenterX + x > 0 and rootCenterX + x < 1024 and rootCenterY + y < 512:
+			if rootCenterX + x > 0 and rootCenterX + x < 1024 and rootCenterY + y < 512 and rootCenterY + y > 0:
 				groundMatrix[rootCenterX + x][rootCenterY + y] = 1
 	raise()
 	

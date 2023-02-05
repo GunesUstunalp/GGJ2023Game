@@ -18,7 +18,7 @@ func _ready():
 	var rootEnd = get_node("RootEnd")
 	rootEnd.connect("found_rock", self, "_on_found_rock")
 	
-	spawnRockAtPosition(Vector2(480,400), DefaultRockHalfWidth, 0)
+	spawnRockAtPosition(Vector2(480,430), DefaultRockHalfWidth, 0)
 	
 	animatedRock = preload('res://AnimatedRock.tscn')
 	rng.randomize()
