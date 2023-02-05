@@ -7,7 +7,7 @@ var MAX_STRENGTH = 3
 var MIN_STRENGTH = 1
 var BASE_SPEED = 1.5
 var BASE_SCALE = Vector2(0.66, 0.33)
-var STRENGTH_UP_RATE = 0.1
+var STRENGTH_UP_RATE = 0.15
 
 var fallTimer
 var inFallCountDown = false

@@ -188,13 +188,14 @@ texture = ExtResource( 2 )
 position = Vector2( 527, 302 )
 scale = Vector2( 0.938415, 0.788093 )
 frames = SubResource( 3 )
+frame = 9
 playing = true
 
 [node name="Grass" type="AnimatedSprite" parent="."]
 position = Vector2( 529, 297 )
 scale = Vector2( 1.01546, 0.957143 )
 frames = SubResource( 1 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Treee" type="Sprite" parent="."]
@@ -207,7 +208,7 @@ position = Vector2( 422, 209 )
 scale = Vector2( 0.734194, 0.663214 )
 frames = SubResource( 4 )
 animation = "BendStage1"
-frame = 1
+frame = 3
 speed_scale = 0.6
 playing = true
 script = ExtResource( 116 )
@@ -216,7 +217,7 @@ script = ExtResource( 116 )
 position = Vector2( 448, 176 )
 rotation = 1.09023
 frames = SubResource( 2 )
-frame = 5
+frame = 18
 playing = true
 
 [node name="Wind" type="AnimatedSprite" parent="."]
@@ -224,7 +225,7 @@ position = Vector2( 911, 166 )
 rotation = 3.08787
 scale = Vector2( 0.66, 0.33 )
 frames = SubResource( 5 )
-frame = 39
+frame = 32
 speed_scale = 4.5
 playing = true
 script = ExtResource( 115 )
