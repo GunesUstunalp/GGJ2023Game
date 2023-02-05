@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2.png-2ed034dba7cf35452e63659d937f8337.stex"
+path="res://.import/2.png-e5b6d1bb70980e673a9773407a000fe5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/bend_tree/bend_Tree_broken/2.png"
-dest_files=[ "res://.import/2.png-2ed034dba7cf35452e63659d937f8337.stex" ]
+source_file="res://Resources/bend_tree/2.png"
+dest_files=[ "res://.import/2.png-e5b6d1bb70980e673a9773407a000fe5.stex" ]
 
 [params]
 

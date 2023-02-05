@@ -8,6 +8,7 @@ var animatedRock
 var rockPositionsArr = []
 var rockScalesArr = []
 var rockRotationsArr = []
+var foundRockCounter = 0
 var rng = RandomNumberGenerator.new()
 var topOffset = 70
 
@@ -43,6 +44,10 @@ func spawnRockAtPosition(posToSpawn : Vector2, rockHalfWidth, rockRotation):
 
 func _on_found_rock(rootEndPos, foundIndex):
 	print("Found Rock!")
+	foundRockCounter += 1
+	
+	if foundRockCounter == rockPositionsArr.size():
+		print("Game Over! You won!")
 	
 	var animatedRockInstance = animatedRock.instance()
 	animatedRockInstance.scale = rockScalesArr[foundIndex]

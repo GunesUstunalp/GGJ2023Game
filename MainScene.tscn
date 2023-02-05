@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://Resources/treee.png" type="Texture" id=1]
 [ext_resource path="res://Resources/toprak.png" type="Texture" id=2]
@@ -39,32 +39,10 @@
 [ext_resource path="res://Resources/leaf/14.png" type="Texture" id=37]
 [ext_resource path="res://Resources/backgrass/Layer 7.png" type="Texture" id=38]
 [ext_resource path="res://Resources/backgrass/Layer 6.png" type="Texture" id=39]
-[ext_resource path="res://Resources/fallingtree/8.png" type="Texture" id=40]
+[ext_resource path="res://Resources/Layer 60.png" type="Texture" id=40]
 [ext_resource path="res://Resources/backgrass/Layer 5.png" type="Texture" id=41]
-[ext_resource path="res://Resources/fallingtree/2.png" type="Texture" id=42]
-[ext_resource path="res://Resources/fallingtree/12.png" type="Texture" id=43]
-[ext_resource path="res://Resources/fallingtree/5.png" type="Texture" id=44]
-[ext_resource path="res://Resources/fallingtree/6.png" type="Texture" id=45]
-[ext_resource path="res://Resources/fallingtree/7.png" type="Texture" id=46]
-[ext_resource path="res://Resources/fallingtree/15.png" type="Texture" id=47]
-[ext_resource path="res://Resources/fallingtree/16.png" type="Texture" id=48]
-[ext_resource path="res://Resources/fallingtree/17.png" type="Texture" id=49]
-[ext_resource path="res://Resources/fallingtree/18.png" type="Texture" id=50]
-[ext_resource path="res://Resources/fallingtree/19.png" type="Texture" id=51]
-[ext_resource path="res://Resources/fallingtree/20.png" type="Texture" id=52]
-[ext_resource path="res://Resources/fallingtree/21.png" type="Texture" id=53]
-[ext_resource path="res://Resources/fallingtree/10.png" type="Texture" id=54]
-[ext_resource path="res://Resources/fallingtree/11.png" type="Texture" id=55]
-[ext_resource path="res://Resources/fallingtree/13.png" type="Texture" id=56]
-[ext_resource path="res://Resources/fallingtree/14.png" type="Texture" id=57]
-[ext_resource path="res://Resources/fallingtree/9.png" type="Texture" id=58]
-[ext_resource path="res://Resources/fallingtree/3.png" type="Texture" id=59]
-[ext_resource path="res://Resources/fallingtree/4.png" type="Texture" id=60]
-[ext_resource path="res://Resources/fallingtree/1.png" type="Texture" id=61]
-[ext_resource path="res://Resources/fallingtree/22.png" type="Texture" id=62]
-[ext_resource path="res://Resources/fallingtree/23.png" type="Texture" id=63]
-[ext_resource path="res://Resources/fallingtree/24.png" type="Texture" id=64]
-[ext_resource path="res://Resources/fallingtree/25.png" type="Texture" id=65]
+[ext_resource path="res://Resources/treeroot.png" type="Texture" id=42]
+[ext_resource path="res://Resources/Layer 69.png" type="Texture" id=43]
 [ext_resource path="res://Resources/backgrass/Layer 9.png" type="Texture" id=66]
 [ext_resource path="res://Resources/backgrass/Layer 8.png" type="Texture" id=67]
 [ext_resource path="res://Resources/backgrass/Layer 10.png" type="Texture" id=68]
@@ -114,6 +92,26 @@
 [ext_resource path="res://Resources/wind/Layer 84.png" type="Texture" id=112]
 [ext_resource path="res://Resources/wind/Layer 86.png" type="Texture" id=113]
 [ext_resource path="res://Resources/wind/Layer 87.png" type="Texture" id=114]
+[ext_resource path="res://Wind.gd" type="Script" id=115]
+[ext_resource path="res://AnimatedTree.gd" type="Script" id=116]
+[ext_resource path="res://Resources/bend_tree/9.png" type="Texture" id=117]
+[ext_resource path="res://Resources/bend_tree/4.png" type="Texture" id=118]
+[ext_resource path="res://Resources/bend_tree/5.png" type="Texture" id=119]
+[ext_resource path="res://Resources/bend_tree/6.png" type="Texture" id=120]
+[ext_resource path="res://Resources/bend_tree/8.png" type="Texture" id=121]
+[ext_resource path="res://Resources/bend_tree/3.png" type="Texture" id=122]
+[ext_resource path="res://Resources/bend_tree/7.png" type="Texture" id=123]
+[ext_resource path="res://Resources/bend_tree/1.png" type="Texture" id=124]
+[ext_resource path="res://Resources/bend_tree/10.png" type="Texture" id=125]
+[ext_resource path="res://Resources/bend_tree/11.png" type="Texture" id=126]
+[ext_resource path="res://Resources/bend_tree/2.png" type="Texture" id=127]
+[ext_resource path="res://Resources/bend_tree/bend_Tree_broken/10.png" type="Texture" id=128]
+[ext_resource path="res://Resources/bend_tree/bend_Tree_broken/8.png" type="Texture" id=129]
+[ext_resource path="res://Resources/bend_tree/bend_Tree_broken/9.png" type="Texture" id=130]
+[ext_resource path="res://Resources/bend_tree/bend_Tree_broken/12.png" type="Texture" id=131]
+[ext_resource path="res://Resources/bend_tree/bend_Tree_broken/11.png" type="Texture" id=132]
+[ext_resource path="res://Resources/bend_tree/bend_Tree_broken/7.png" type="Texture" id=133]
+[ext_resource path="res://Resources/bend_tree/bend_Tree_broken/13.png" type="Texture" id=134]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -133,9 +131,24 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 61 ), ExtResource( 42 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 58 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 43 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"frames": [ ExtResource( 133 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 128 ), ExtResource( 132 ), ExtResource( 131 ), ExtResource( 134 ) ],
 "loop": true,
-"name": "default",
+"name": "BendBroken",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 124 ), ExtResource( 127 ), ExtResource( 122 ), ExtResource( 117 ), ExtResource( 125 ), ExtResource( 126 ) ],
+"loop": true,
+"name": "BendStage1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 118 ), ExtResource( 119 ), ExtResource( 123 ), ExtResource( 121 ) ],
+"loop": true,
+"name": "BendStage2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 119 ), ExtResource( 120 ), ExtResource( 123 ) ],
+"loop": true,
+"name": "BendStage3",
 "speed": 5.0
 } ]
 
@@ -151,7 +164,7 @@ animations = [ {
 animations = [ {
 "frames": [ ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 102 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 100 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 75 ), ExtResource( 103 ) ],
 "loop": true,
-"name": "Continous",
+"name": "Continuous",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 76 ), ExtResource( 94 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 102 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 100 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 75 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 112 ), ExtResource( 111 ), ExtResource( 113 ), ExtResource( 114 ) ],
@@ -172,17 +185,17 @@ position = Vector2( 514, 512 )
 texture = ExtResource( 2 )
 
 [node name="Backgrass" type="AnimatedSprite" parent="."]
-position = Vector2( 523, 304 )
-scale = Vector2( 0.948002, 0.634328 )
+position = Vector2( 527, 302 )
+scale = Vector2( 0.938415, 0.788093 )
 frames = SubResource( 3 )
-frame = 5
+frame = 8
 playing = true
 
 [node name="Grass" type="AnimatedSprite" parent="."]
-position = Vector2( 530, 291 )
+position = Vector2( 529, 297 )
 scale = Vector2( 1.01546, 0.957143 )
 frames = SubResource( 1 )
-frame = 7
+frame = 2
 playing = true
 
 [node name="Treee" type="Sprite" parent="."]
@@ -190,19 +203,32 @@ visible = false
 position = Vector2( 530, 210 )
 texture = ExtResource( 1 )
 
-[node name="FallingTree" type="AnimatedSprite" parent="."]
+[node name="AnimatedTree" type="AnimatedSprite" parent="."]
 position = Vector2( 422, 209 )
 scale = Vector2( 0.734194, 0.663214 )
 frames = SubResource( 4 )
-frame = 1
-speed_scale = 2.0
+animation = "BendStage1"
+frame = 2
+speed_scale = 0.6
+playing = true
+script = ExtResource( 116 )
 
 [node name="Leafs" type="AnimatedSprite" parent="."]
 position = Vector2( 448, 176 )
 rotation = 1.09023
 frames = SubResource( 2 )
-frame = 12
+frame = 4
 playing = true
+
+[node name="Wind" type="AnimatedSprite" parent="."]
+position = Vector2( 911, 166 )
+rotation = 3.08787
+scale = Vector2( 0.66, 0.33 )
+frames = SubResource( 5 )
+frame = 34
+speed_scale = 4.5
+playing = true
+script = ExtResource( 115 )
 
 [node name="FPSCounter" type="Label" parent="."]
 margin_left = 854.0
@@ -223,11 +249,17 @@ script = ExtResource( 5 )
 position = Vector2( 517, 354 )
 texture = ExtResource( 74 )
 
-[node name="Wind" type="AnimatedSprite" parent="."]
-position = Vector2( 911, 166 )
-rotation = 3.08787
-scale = Vector2( 0.66, 0.33 )
-frames = SubResource( 5 )
-frame = 3
-speed_scale = 1.5
-playing = true
+[node name="Treeroot" type="Sprite" parent="."]
+position = Vector2( 556, 317 )
+scale = Vector2( 0.755052, 0.956773 )
+texture = ExtResource( 42 )
+
+[node name="Layer69" type="Sprite" parent="Treeroot"]
+position = Vector2( -112.575, -25.0843 )
+texture = ExtResource( 43 )
+
+[node name="Layer60" type="Sprite" parent="Treeroot"]
+position = Vector2( -76.8158, -9.40662 )
+texture = ExtResource( 40 )
+
+[connection signal="animation_finished" from="AnimatedTree" to="AnimatedTree" method="_on_AnimatedTree_animation_finished"]
