@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://Resources/treee.png" type="Texture" id=1]
 [ext_resource path="res://Resources/toprak.png" type="Texture" id=2]
@@ -74,6 +74,46 @@
 [ext_resource path="res://Resources/backgrass/Layer 14.png" type="Texture" id=72]
 [ext_resource path="res://Resources/backgrass/Layer 15.png" type="Texture" id=73]
 [ext_resource path="res://Resources/greenlayer.png" type="Texture" id=74]
+[ext_resource path="res://Resources/wind/Layer 75.png" type="Texture" id=75]
+[ext_resource path="res://Resources/wind/Layer 48.png" type="Texture" id=76]
+[ext_resource path="res://Resources/wind/Layer 60.png" type="Texture" id=77]
+[ext_resource path="res://Resources/wind/Layer 61.png" type="Texture" id=78]
+[ext_resource path="res://Resources/wind/Layer 50.png" type="Texture" id=79]
+[ext_resource path="res://Resources/wind/Layer 51.png" type="Texture" id=80]
+[ext_resource path="res://Resources/wind/Layer 52.png" type="Texture" id=81]
+[ext_resource path="res://Resources/wind/Layer 53.png" type="Texture" id=82]
+[ext_resource path="res://Resources/wind/Layer 54.png" type="Texture" id=83]
+[ext_resource path="res://Resources/wind/Layer 55.png" type="Texture" id=84]
+[ext_resource path="res://Resources/wind/Layer 56.png" type="Texture" id=85]
+[ext_resource path="res://Resources/wind/Layer 57.png" type="Texture" id=86]
+[ext_resource path="res://Resources/wind/Layer 58.png" type="Texture" id=87]
+[ext_resource path="res://Resources/wind/Layer 59.png" type="Texture" id=88]
+[ext_resource path="res://Resources/wind/Layer 63.png" type="Texture" id=89]
+[ext_resource path="res://Resources/wind/Layer 64.png" type="Texture" id=90]
+[ext_resource path="res://Resources/wind/Layer 65.png" type="Texture" id=91]
+[ext_resource path="res://Resources/wind/Layer 66.png" type="Texture" id=92]
+[ext_resource path="res://Resources/wind/Layer 67.png" type="Texture" id=93]
+[ext_resource path="res://Resources/wind/Layer 49.png" type="Texture" id=94]
+[ext_resource path="res://Resources/wind/Layer 69.png" type="Texture" id=95]
+[ext_resource path="res://Resources/wind/Layer 70.png" type="Texture" id=96]
+[ext_resource path="res://Resources/wind/Layer 71.png" type="Texture" id=97]
+[ext_resource path="res://Resources/wind/Layer 72.png" type="Texture" id=98]
+[ext_resource path="res://Resources/wind/Layer 73.png" type="Texture" id=99]
+[ext_resource path="res://Resources/wind/Layer 68.png" type="Texture" id=100]
+[ext_resource path="res://Resources/wind/Layer 74.png" type="Texture" id=101]
+[ext_resource path="res://Resources/wind/Layer 62.png" type="Texture" id=102]
+[ext_resource path="res://Resources/wind/Layer 76.png" type="Texture" id=103]
+[ext_resource path="res://Resources/wind/Layer 77.png" type="Texture" id=104]
+[ext_resource path="res://Resources/wind/Layer 78.png" type="Texture" id=105]
+[ext_resource path="res://Resources/wind/Layer 79.png" type="Texture" id=106]
+[ext_resource path="res://Resources/wind/Layer 80.png" type="Texture" id=107]
+[ext_resource path="res://Resources/wind/Layer 81.png" type="Texture" id=108]
+[ext_resource path="res://Resources/wind/Layer 82.png" type="Texture" id=109]
+[ext_resource path="res://Resources/wind/Layer 83.png" type="Texture" id=110]
+[ext_resource path="res://Resources/wind/Layer 85.png" type="Texture" id=111]
+[ext_resource path="res://Resources/wind/Layer 84.png" type="Texture" id=112]
+[ext_resource path="res://Resources/wind/Layer 86.png" type="Texture" id=113]
+[ext_resource path="res://Resources/wind/Layer 87.png" type="Texture" id=114]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -107,6 +147,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 102 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 100 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 75 ), ExtResource( 103 ) ],
+"loop": true,
+"name": "Continous",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 76 ), ExtResource( 94 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 102 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 100 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 75 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 112 ), ExtResource( 111 ), ExtResource( 113 ), ExtResource( 114 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 6 )
 
@@ -122,14 +175,14 @@ texture = ExtResource( 2 )
 position = Vector2( 523, 304 )
 scale = Vector2( 0.948002, 0.634328 )
 frames = SubResource( 3 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="Grass" type="AnimatedSprite" parent="."]
 position = Vector2( 530, 291 )
 scale = Vector2( 1.01546, 0.957143 )
 frames = SubResource( 1 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="Treee" type="Sprite" parent="."]
@@ -148,7 +201,7 @@ speed_scale = 2.0
 position = Vector2( 448, 176 )
 rotation = 1.09023
 frames = SubResource( 2 )
-frame = 9
+frame = 12
 playing = true
 
 [node name="FPSCounter" type="Label" parent="."]
@@ -169,3 +222,12 @@ script = ExtResource( 5 )
 [node name="Greenlayer" type="Sprite" parent="."]
 position = Vector2( 517, 354 )
 texture = ExtResource( 74 )
+
+[node name="Wind" type="AnimatedSprite" parent="."]
+position = Vector2( 911, 166 )
+rotation = 3.08787
+scale = Vector2( 0.66, 0.33 )
+frames = SubResource( 5 )
+frame = 3
+speed_scale = 1.5
+playing = true
